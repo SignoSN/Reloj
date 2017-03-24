@@ -30,7 +30,8 @@ hora = ->
     p = if h > 12 then "PM" else "AM"
 
     H = if h > 12 then h - 12 else h
-    H = if H < 10 then "0#{H}" else H   
+    H = if H < 10 then "0#{H}" else H  
+    H = if H == "00" then "12" else H 
     M = if m < 10 then "0#{m}" else m
     S = if s < 10 then "0#{s}" else s
     horas.innerHTML = H

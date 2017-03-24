@@ -22,6 +22,7 @@
     p = h > 12 ? "PM" : "AM";
     H = h > 12 ? h - 12 : h;
     H = H < 10 ? "0" + H : H;
+    H = H === "00" ? "12" : H;
     M = m < 10 ? "0" + m : m;
     S = s < 10 ? "0" + s : s;
     horas.innerHTML = H;
