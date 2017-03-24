@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*color*/
+@primario:#f9f9f9;
+body{
+    background: url('../img/fondo.jpeg') 49% 50% fixed no-repeat;
+    /*background-size: 100% 100%;*/
+    color: @primario;
+    font-family: sans-serif;
+    font-size: 2.2em;
+    font-weight: bold;
+    animation: colores 3s infinite;
+    @media (min-width:1024px){
+        font-size: 6em;
+        background-size: cover;
+    }
+}
+#reloj{
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    & > div{
+        display: inline-block;
+        text-align: center;
+        margin: 0;
+    }
+    .reja{
+        padding: 0;
+    }
+    #seg, #peri{
+        font-size: 16px;
+        @media (min-width:1024px){
+            font-size: 32px;
+    }
+    }
+    #seg{
+        border-bottom: 1px solid @primario;
+    }
+    #fecha{
+        display: block;
+        font-size: 12px;
+        @media (min-width:1024px){
+            font-size: 30px;
+        }
+    }
+}
+#cerrar{    
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    a{
+        color: #f9f9f9;
+        font-size: 8px;
+        text-decoration: none;
+    }
+    a:hover{
+        color:@primario;
+    }
+}
+/*@keyframes colores{
+    0%{color:@primario;}
+    50%{color:lighten(@primario, 50%);}
+}*/
