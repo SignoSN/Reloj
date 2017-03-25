@@ -57,16 +57,14 @@ Tempo = (function() {
 
 })();
 
-Tempo.resetContador();
-
 window.cuenta;
 
 window.salida = document.getElementById('salida');
 
 detener = function() {
-  Tempo.setHora("0");
-  Tempo.setMinuto("0");
-  Tempo.setSegundo("0");
+  Tempo.setHora("00");
+  Tempo.setMinuto("00");
+  Tempo.setSegundo("00");
   Tempo.getSegundo();
   Tempo.getMinuto();
   Tempo.getHora();
@@ -88,16 +86,15 @@ iniciar = function(event) {
 };
 
 contar = function() {
-  Tempo.setHora("0");
-  Tempo.setMinuto("0");
-  Tempo.setSegundo("0");
+  Tempo.setHora("00");
+  Tempo.setMinuto("00");
+  Tempo.setSegundo("00");
   pantalla();
   Tempo.setContador(Tempo.getContador() - 1);
   if (Tempo.getContador() < 0) {
     Tempo.resetContador();
     clearInterval(window.cuenta);
-    window.salida.innerHTML = "<audio src=\"sound/una.mp3\" autoplay ></audios>";
-    return setTimeout(alert("Tiempo Agotado"), 1000);
+    return window.salida.innerHTML = "<audio src=\"sound/una.mp3\" autoplay ></audios>";
   }
 };
 
@@ -106,13 +103,20 @@ pantalla = function() {
   restante = Tempo.getContador();
   minis = Math.floor(restante / 60);
   resHoras = Math.floor(restante / 3600);
-  if (parseInt(resHoras) > 0) {
-    resMinutos = (Math.floor(restante / 60)) - (60 * parseInt(resHoras));
-  } else {
-    resMinutos = Math.floor(restante / 60);
-  }
+  resMinutos = (Math.floor(restante / 60)) - (60 * parseInt(resHoras));
   resSegundos = restante - (60 * minis);
+  if (resHoras < 10) {
+    resHoras = "0" + resHoras;
+  }
+  if (resMinutos < 10) {
+    resMinutos = "0" + resMinutos;
+  }
+  if (resSegundos < 10) {
+    resSegundos = "0" + resSegundos;
+  }
   document.getElementById('hora').value = resHoras;
   document.getElementById('minuto').value = resMinutos;
   return document.getElementById('segundo').value = resSegundos;
 };
+
+detener();
