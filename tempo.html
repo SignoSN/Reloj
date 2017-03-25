@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Temporizador</title>
+    <link rel="stylesheet" href="css/fa.css">
+    <link rel="stylesheet" href="css/tempo.css">    
+</head>
+<body>
+    <div id="tempo">
+        <h1>Temorizador</h1>
+        <input type="number" min="0" max="24" id="hora" value="0">:
+        <input type="number" min="0" max="59" id="minuto" value="0">:
+        <input type="number" min="0" max="59" id="segundo" value="0"> <br>
+        <button onclick="iniciar()" class="inicio"> <i class="fa fa-play"></i> </button>
+        <button onclick="detener()" class="detener"> <i class="fa fa-stop"></i>  </button>
+    </div>
+    <div id="cerrar"><a href="javascript:window.close()"><i class="fa fa-close"></i></a></div>
+    <div id="salida"></div>
+    <script src="js/tempo.js"></script>
+</body>
+</html>

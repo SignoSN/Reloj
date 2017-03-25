@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Colores */
+@blanco: #f9f9f9;
+body{
+    background: url('../img/tempo.jpg') 50% 50% fixed no-repeat;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: @blanco;
+}
+#tempo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    h1{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    input[type=number]{
+        background: transparent;
+        color: @blanco;
+        border: none;
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+    }
+    button{
+        width: 150px;
+        display: inline-block;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        cursor: pointer;
+        color: @blanco;
+        font-weight:bold; 
+        transition: all 0.3s;
+    }
+    .inicio:hover{
+        border: 1px solid @blanco;
+        color: #5f5;
+    }
+    .detener:hover{
+        border: 1px solid @blanco;
+        color: #f55;
+    }
+}
+#cerrar{    
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    a{
+        color: #f9f9f9;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    a:hover{
+        color:#f9f9f9;
+    }
+}
